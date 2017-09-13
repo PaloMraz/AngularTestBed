@@ -1,0 +1,25 @@
+<div [formGroup]="rootFormGroup">
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">
+          <button type="button" (click)="addName()" [disabled]="!canAddName" title="Pridať">Pridať</button>
+        </th>
+        <th>
+          Meno
+          <span *ngIf="isBusy">(Loading...)</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody formArrayName="names">
+      <tr *ngFor="let ctl of namesFormArray.controls; let i = index" [formGroupName]="i">
+        <td colspan="2">
+          &nbsp;
+        </td>
+        <td>
+          <input formControlName="name">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

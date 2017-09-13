@@ -1,0 +1,13 @@
+
+<form [formGroup]="rootFormGroup" (ngSubmit)="save()">
+
+  <button type="submit" [disabled]="!canSave">Uložiť</button>
+
+  <input formControlName="year">
+
+  <hr>
+
+  <app-child-form [rootFormGroup]="namesFormGroup"></app-child-form>
+</form>
+
+
